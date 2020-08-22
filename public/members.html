@@ -1,35 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Passport Authentication</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
+    />
+    <link href="stylesheets/style.css" rel="stylesheet" />
+    <link href="stylesheets/calculator.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <title>Passport Authentication</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
-</head>
-
-<body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
-    </div>
-  </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/logout">
+            Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2>Welcome <span class="member-name"></span></h2>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
+    <div id="container">
+      <h1>Tip Calculator</h1>
+      <div id="calculator">
+        <form>
+          <p>How much was your bill?</p>
+          <p>$ <input id="billamt" type="text" placeholder="Bill Amount" /></p>
 
-</body>
+          <p>How was your service?</p>
+          <p>
+            <select id="serviceQual">
+              <option disabled selected value="0"
+                >-- Choose an Option --</option
+              >
+              <option value="0.3">30&#37; &#45; Outstanding</option>
+              <option value="0.2">20&#37; &#45; Good</option>
+              <option value="0.15">15&#37; &#45; It was OK</option>
+              <option value="0.1">10&#37; &#45; Bad</option>
+              <option value="0.05">5&#37; &#45; Terrible</option>
+            </select>
+          </p>
+        </form>
 
+        <button type="button" id="calculate">Calculate!</button>
+      </div>
+      <!--calculator end-->
+      <div id="totalTip">
+        <sup>$</sup><span id="tip">0.00</span>
+        <small id="each">each</small>
+      </div>
+      <!--totalTip end-->
+    </div>
+    <!--container end-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+  </body>
 </html>
