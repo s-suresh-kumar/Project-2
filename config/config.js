@@ -3,19 +3,21 @@ module.exports = {
   development: {
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
-    database: "passport_demo",
+    database: "tips_db",
     host: process.env.DB_HOST,
-    dialect: "mysql"
+    dialect: "mysql",
   },
   test: {
     username: process.env.DB_USER,
     password: process.env.DB_PASS,
-    database: "database_test",
+    database: "tips_db",
     host: process.env.DB_HOST,
-    dialect: "mysql"
+    dialect: "mysql",
   },
   production: {
     useEnvVariable: "JAWSDB_URL",
-    dialect: "mysql"
-  }
+    dialect: "mysql",
+  },
 };
+
+// passport_demo
