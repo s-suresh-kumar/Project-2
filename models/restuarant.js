@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
   // Creates a "Book" model that matches up with DB
-  let Restuarant = sequelize.define("Restuarant", {
+  const Restuarant = sequelize.define("Restuarant", {
     name: DataTypes.STRING,
     location: DataTypes.STRING
   });
