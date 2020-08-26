@@ -1,7 +1,6 @@
-
 module.exports = function (sequelize, DataTypes) {
   // Creates a "Waiter" model that matches up with DB
-  var Waiter = sequelize.define("Waiter", {
+  let Waiter = sequelize.define("Waiter", {
     name: DataTypes.STRING,
     rating: DataTypes.INTEGER
   });
@@ -13,7 +12,6 @@ module.exports = function (sequelize, DataTypes) {
       }
     });
   };
-
 
   return Waiter;
 };

@@ -1,4 +1,4 @@
-var Sequelize = require("sequelize");
+const Sequelize = require("sequelize");
 require("dotenv").config(); // this is important!
 // module.exports = {
 //   development: {
@@ -20,4 +20,3 @@ require("dotenv").config(); // this is important!
 //     dialect: "mysql"
 //   }
 // };
-

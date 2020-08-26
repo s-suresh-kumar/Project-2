@@ -1,8 +1,6 @@
-
-
 module.exports = function (sequelize, DataTypes) {
   // Creates a "Book" model that matches up with DB
-  var Restuarant = sequelize.define("Restuarant", {
+  let Restuarant = sequelize.define("Restuarant", {
     name: DataTypes.STRING,
     location: DataTypes.STRING
   });
@@ -14,5 +12,3 @@ module.exports = function (sequelize, DataTypes) {
   };
   return Restuarant;
 };
-
-
