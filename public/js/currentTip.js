@@ -1,3 +1,9 @@
+$(document).ready(function(){
+  $('.modal').modal();
+  $('.dropdown-trigger').dropdown();
+});
+
+
 function calculateTip() {
   const billAmt = document.getElementById("billamt").value;
   const serviceQual = document.getElementById("serviceQual").value;

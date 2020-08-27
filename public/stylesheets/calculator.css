@@ -138,3 +138,8 @@ body {
     font-size: 17px;
     color: white;
   }
+
+  .dropdown-content{
+    width: max-content !important;
+    height:auto !important;
+  }
