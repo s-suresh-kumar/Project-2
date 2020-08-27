@@ -74,6 +74,7 @@ body {
   #serviceQual {
     padding: 13px 13px 20px 20px;
     margin-left: 20px;
+    
     font-size: 25px;
   }
   
@@ -81,7 +82,7 @@ body {
     text-transform: uppercase;
     font-weight: bold;
     display: block;
-    margin: 30px auto;
+    margin: 10px auto;
     background: #AD133A;
     border-radius: 5px;
     width: 200px;
