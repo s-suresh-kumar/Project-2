@@ -50,6 +50,24 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+ 
 
   });
+
+  //  pulls current amount plus tip to show total
+  app.post("/api/serviceQual", (req, res) => {
+    console.log(req.body)
+      db.Waiter.create({
+        name: req.body.name,
+        rating: req.body.rating,
+        tipAmount: req.body.tipAmount,
+      })
+        .then((dbwaiter) => {
+          res.json(dbwaiter);
+        })
+        .catch(err => {
+          res.status(401).json(err);
+        });
+    });
+  
 };

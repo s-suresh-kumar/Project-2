@@ -47,14 +47,27 @@ function addTip() {
   var serviceQualEl = document.querySelector("#serviceQual").value;
   var billamtEl1 = document.querySelector("#billamt").value;
 
+  var name = "Sue"
   // event.preventDefault();
   // var tipPercentage = tipEl.value * .01;
   // var total = totalEl.value;
   var tipAmount = calculateTip(billamtEl1, serviceQualEl);
   var newTotal = calculatebillamtEl1(billamtEl1, tipAmount);
   console.log(tipAmount, newTotal);
-  document.querySelector("#tip-amount").textContent = tipAmount;
-  document.querySelector("#new-total").textContent = newTotal.toFixed(2);
+  // document.querySelector("#tip-amount").textContent = tipAmount;
+  // document.querySelector("#new-total").textContent = newTotal.toFixed(2);
+  var rating = ""
+  if (serviceQualEl === "0.3") {
+    rating = "great"
+  }
+  else if (serviceQualEl === "0.2") {
+    rating = "good"
+  }
+  else {
+    rating = "bad"
+  }
+
+  redirect(name, rating, tipAmount)
 }
 //Hide the tip amount on load
 document.getElementById("totalTip").style.display = "none";
@@ -65,6 +78,10 @@ document.getElementById("each").style.display = "none";
 //   calculateTip();
 // };
 
+//sends tip amount with total to new page
+function redirect(name, rating, tipAmount) {
+  $.post("/api/serviceQual", { name, rating, tipAmount }).then(function () { window.location.replace("/previoustips") });
+}
 
 //Tips array 
 let tips = [];
