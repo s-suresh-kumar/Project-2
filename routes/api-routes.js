@@ -18,6 +18,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
+  console.log(req.body)
     db.User.create({
       email: req.body.email,
       password: req.body.password
@@ -49,5 +50,24 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+ 
+
   });
+
+  //  pulls current amount plus tip to show total
+  app.post("/api/serviceQual", (req, res) => {
+    console.log(req.body)
+      db.Waiter.create({
+        name: req.body.name,
+        rating: req.body.rating,
+        tipAmount: req.body.tipAmount,
+      })
+        .then((dbwaiter) => {
+          res.json(dbwaiter);
+        })
+        .catch(err => {
+          res.status(401).json(err);
+        });
+    });
+  
 };
