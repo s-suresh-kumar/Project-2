@@ -29,7 +29,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="signup.html">Logout</a></li>
         <li><a href="currentTip.html">Current Tip</a></li>
-        <li><a href="pastTip.html">Past Tips</a></li>
+        <li><a href="previoustip.html">Past Tips</a></li>
 
       </ul>
     </div>
@@ -56,10 +56,11 @@
     <h1>Tip Calculator</h1>
     <div id="calculator">
       <form>
-        <p>How much was your bill?</p>
+        <p style="margin-top:20px"><b>How much was your bill?</b></p>
         <p>$ <input id="billamt" type="text" placeholder="Bill Amount" /></p>
-
-        <p>How was your service?</p>
+        <p><b>Name of Wait Person?</b></p>
+        <p>$ <input id="waiterName" type="text" placeholder="Wait Person Name" /></p>
+        <p><b>How was your service?</b></p>
         <p>
           <select id="serviceQual"> == $0
             <option disabled selected value="0">-- Choose an Option --</option>
@@ -71,7 +72,7 @@
         </p>
       </form>
 
-      <button type="button" id="calculate" onclick="addTip()">Calculate!</button>
+      <button style="margin-top:50px" type="button" id="calculate" onclick="addTip()">Calculate!</button>
       <button type="button" id="save">Save</button>
     </div>
     <!-- calculator end -->
