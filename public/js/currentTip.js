@@ -47,7 +47,9 @@ function addTip() {
   var serviceQualEl = document.querySelector("#serviceQual").value;
   var billamtEl1 = document.querySelector("#billamt").value;
 
-  var name = "Sue"
+  var name = $("#waiterName").val().trim();
+  console.log(name);
+  // var name = "Joe";
   // event.preventDefault();
   // var tipPercentage = tipEl.value * .01;
   // var total = totalEl.value;
