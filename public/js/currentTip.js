@@ -1,12 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, options);
-  });
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.dropdown-trigger');
+  // var instances = M.Dropdown.init(elems, options);
+});
 
-  // Or with jQuery
+// Or with jQuery
 
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('.modal').modal();
   $('.dropdown-trigger').dropdown();
 });
@@ -54,8 +54,8 @@ function calculatebillamtEl1(billamtEl1, tipAmount) {
 function addTip() {
   var serviceQualEl = document.querySelector("#serviceQual").value;
   var billamtEl1 = document.querySelector("#billamt").value;
+  var name = document.querySelector("#waiterName").value;
 
-  var name = "Sue"
   // event.preventDefault();
   // var tipPercentage = tipEl.value * .01;
   // var total = totalEl.value;
@@ -74,8 +74,6 @@ function addTip() {
   else {
     rating = "bad"
   }
-*/
-
   redirect(name, rating, tipAmount)
 }
 //Hide the tip amount on load
