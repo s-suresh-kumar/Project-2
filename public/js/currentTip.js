@@ -1,4 +1,12 @@
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, options);
+  });
+
+  // Or with jQuery
+
+
+$(document).ready(function(){
   $('.modal').modal();
   $('.dropdown-trigger').dropdown();
 });
@@ -47,9 +55,7 @@ function addTip() {
   var serviceQualEl = document.querySelector("#serviceQual").value;
   var billamtEl1 = document.querySelector("#billamt").value;
 
-  var name = $("#waiterName").val().trim();
-  console.log(name);
-  // var name = "Joe";
+  var name = "Sue"
   // event.preventDefault();
   // var tipPercentage = tipEl.value * .01;
   // var total = totalEl.value;
@@ -68,6 +74,7 @@ function addTip() {
   else {
     rating = "bad"
   }
+*/
 
   redirect(name, rating, tipAmount)
 }
