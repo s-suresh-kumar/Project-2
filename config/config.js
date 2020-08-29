@@ -1,24 +1,24 @@
 const Sequelize = require("sequelize");
 require("dotenv").config(); // this is important!
 module.exports = {
-  development: {
-    username: process.env.DB_USER,
-    password: "Kenfacheng1"
+    development: {
+        username: process.env.DB_USER,
+        password: ""
     database: "tips_db",
-    host: process.env.DB_HOST,
-    dialect: "mysql"
-  },
-  test: {
-    username: process.env.DB_USER,
-    password: "Kenfacheng1"
+        host: process.env.DB_HOST,
+        dialect: "mysql"
+    },
+    test: {
+        username: process.env.DB_USER,
+        password: ""
     database: "database_test",
-    host: process.env.DB_HOST,
-    dialect: "mysql"
-  },
-  production: {
-    useEnvVariable: "JAWSDB_URL",
-    dialect: "mysql"
-  }
+        host: process.env.DB_HOST,
+        dialect: "mysql"
+    },
+    production: {
+        useEnvVariable: "JAWSDB_URL",
+        dialect: "mysql"
+    }
 };
 // module.exports = {
 //   development: {
