@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -18,7 +18,7 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
-  console.log(req.body)
+    console.log(req.body)
     db.User.create({
       email: req.body.email,
       password: req.body.password
@@ -50,24 +50,35 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
- 
+
 
   });
 
   //  pulls current amount plus tip to show total
   app.post("/api/serviceQual", (req, res) => {
     console.log(req.body)
-      db.Waiter.create({
-        name: req.body.name,
-        rating: req.body.rating,
-        tipAmount: req.body.tipAmount,
+    db.Waiter.create({
+      name: req.body.name,
+      rating: req.body.rating,
+      tipAmount: req.body.tipAmount,
+    })
+      .then((dbwaiter) => {
+        res.json(dbwaiter);
       })
-        .then((dbwaiter) => {
-          res.json(dbwaiter);
-        })
-        .catch(err => {
-          res.status(401).json(err);
-        });
-    });
-  
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+  //  get to previous tip page
+  app.get("/api/tips", (req, res) => {
+    console.log(req.body)
+    db.Waiter.findAll({
+    })
+      .then((dbwaiter) => {
+        res.json(dbwaiter);
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
 };
