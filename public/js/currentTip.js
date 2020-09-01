@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Or with jQuery
 
-$(document).ready(function () {
+$(document).ready(() => {
   $(".modal").modal();
   $(".dropdown-trigger").dropdown();
 });
@@ -41,9 +41,9 @@ $(document).ready(function () {
 const saveEl2 = document.querySelector("#save");
 
 function calculateTip(billamt, serviceQualEl) {
-  const roundedResult = (parseFloat(billamt) * parseFloat(serviceQualEl)).toFixed(
-    2
-  );
+  const roundedResult = (
+    parseFloat(billamt) * parseFloat(serviceQualEl)
+  ).toFixed(2);
   return roundedResult;
 }
 
@@ -52,9 +52,9 @@ function calculatebillamtEl1(billamtEl1, tipAmount) {
 }
 
 function addTip() {
-  var serviceQualEl = document.querySelector("#serviceQual").value;
-  var billamtEl1 = document.querySelector("#billamt").value;
-  var name = document.querySelector("#waiterName").value;
+  const serviceQualEl = document.querySelector("#serviceQual").value;
+  const billamtEl1 = document.querySelector("#billamt").value;
+  const name = document.querySelector("#waiterName").value;
 
   // event.preventDefault();
   // var tipPercentage = tipEl.value * .01;
@@ -67,11 +67,9 @@ function addTip() {
   let rating = "";
   if (serviceQualEl === "0.3") {
     rating = "great";
-  }
-  else if (serviceQualEl === "0.2") {
+  } else if (serviceQualEl === "0.2") {
     rating = "good";
-  }
-  else {
+  } else {
     rating = "bad";
   }
   redirect(name, rating, tipAmount);
@@ -88,7 +86,7 @@ document.getElementById("each").style.display = "none";
 //sends tip amount with total to new page
 function redirect(name, rating, tipAmount) {
   $.post("/api/serviceQual", { name, rating, tipAmount }).then(() => {
-    window.location.replace("/previoustips")
+    window.location.replace("/previoustips");
   });
 }
 
